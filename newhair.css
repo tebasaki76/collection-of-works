@@ -1,0 +1,1870 @@
+@charset "UTF-8";
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #f6f6f1;
+    font-size: 16px;
+}
+
+body, h2, h3, p {
+    color: #736767;
+    font-family: 'Kiwi Maru', serif;
+    line-height: 1.6;
+    letter-spacing: 0.05rem;
+} 
+
+h2 {
+    font-size: 3.2rem;
+}
+
+@media screen and (min-width: 767px) {
+    h2 {
+        font-size: 4.5rem;
+    }
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+@media screen and (min-width: 767px) {
+    h3 {
+        font-size: 2.4rem;
+    }
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+#up {
+    vertical-align: top; 
+}
+
+#down {
+    vertical-align: bottom;
+}
+
+.wave-icon {
+    position: relative;
+    top: -15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 105px;
+    height: 25px;
+    background-image: url(images/wave-icon.png);
+    background-size: 105px 25px;
+}
+
+@media screen and (min-width: 767px) {
+    .wave-icon {
+        margin: 0;
+    }
+}
+
+.front {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+}
+
+@media screen and (min-width: 767px){
+    .front {
+        left: 3px;
+    }
+}
+
+.desktop-button {
+    display: none;
+}
+
+.smartphone-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+    height: 48px;
+    padding-left: 50px;
+    padding-right: 30px;
+    margin: 0 auto;
+    color: #736767;
+    font-size: 1.6rem;
+    border: 2px solid #736767;
+}
+
+.smartphone-button a {
+    color: #736767;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.arrow {
+    width: 32px;
+    height: 8px;
+    border-bottom: 1px solid #736767;
+    border-right: 1px solid #736767;
+    transform: skew(45deg);
+}
+
+@media screen and (min-width: 767px){
+
+    .smartphone-button {
+        display: none;
+        width: 210px;
+        height: 60px;
+        padding-left: 70px;
+        font-size: 2.0rem;
+    }
+
+    .desktop-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 210px;
+        height: 60px;
+        padding-left: 70px;
+        padding-right: 30px;
+        color: #736767;
+        font-size: 2.0rem;
+        border: 2px solid #736767;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .arrow {
+        width: 40px;
+        height: 8px;
+        border-bottom: 1px solid #736767;
+        border-right: 1px solid #736767;
+        transform: skew(45deg);
+        z-index: 1;
+    }
+
+    .desktop-button:hover {
+        background-color: #736767;
+    }
+
+    .desktop-button:hover p {
+        color: #f6f6f1;
+    }
+
+    .desktop-button:hover .arrow {
+        border-color: #f6f6f1;
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ヘッダー */
+
+.hdr {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    font-size: 1.4rem;
+    z-index: 1;
+}
+
+@media screen and (min-width: 1050px) {
+    .hdr {
+        font-size: 1.8rem;
+    }
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 767px) {
+    .box {
+        flex-wrap: nowrap;
+    }
+}
+
+.smartphone-hdr {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media screen and (min-width: 767px) {
+    .smartphone-hdr {
+        width: auto;
+    }
+}
+
+.hdr-logo {
+    position: relative;
+    min-width: 150px;
+    height: 80px;
+    margin-left: 20px;
+    background-image: url(images/hair_logo_side.png);
+    background-size: contain;
+    background-position: top;
+}
+
+.drawer-button {
+    position: relative;
+    width: 92px;
+    height: 80px;
+    padding: 25px;
+    text-align: center;
+}
+
+.drawer-button span {
+    display: block;
+    width: 38px;
+    height: 2px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: #f6f6f1;
+}
+
+.drawer-button span:first-child {
+    position: absolute;
+    top: 35px;
+    transition: all 0.2s ease-out;
+}
+
+.drawer-button span:last-child {
+    position: absolute;
+    top: 42px;
+    transition: all 0.2s ease-out;
+}
+
+
+/* ヘッダー開閉時 */
+
+.open span:first-child {
+    transform: rotate(45deg);
+    transition: all 0.2s ease-out;
+}
+
+.open span:last-child {
+    top: 35px;
+    transform: rotate(-45deg);
+    transition: all 0.2s ease-out;
+}
+
+.navigation {
+    display: none;
+    width: 100%;
+}
+
+.open {
+    display: block;
+}
+
+@media screen and (min-width: 767px) {
+    .drawer-button {
+        display: none;
+    }
+    .navigation {
+        display: block;
+        width: 100%;
+    }    
+}
+
+ul {
+    list-style: none;
+}
+
+.list-box {
+    background-color: rgba(246,246,241,0.9);
+    height: 620px;
+    margin: 0 auto;
+    padding: 100px 10%;
+    text-align: center;
+    /* transition: all 1s linear;
+    transform: translateX(100vw); */
+}
+
+.list-open {
+    /* transition: all 1s linear;
+    transform: translateX(0); */
+}
+
+@media screen and (min-width: 767px) {
+    .list-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        padding: 0;
+        margin-left: 5%;
+        background-color: transparent;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .list-box {
+        padding: 0;
+        margin-left: 15%;
+    }
+}
+
+.list-box li {
+    line-height: 4.0;
+}
+
+@media screen and (min-width: 767px) {
+    .list-box li {
+        line-height: 0;
+    }
+}
+
+.list-box a {
+    color: #534040;
+    text-decoration: none;
+}
+
+.nav-buttton {
+    transition: 0.s;
+}
+
+.nav-buttton:hover {
+    color: #736767;
+    z-index: 1;
+}
+
+
+.hdr-button {
+    padding-top: 40px;
+}
+
+@media screen and (min-width: 767px) {
+    .hdr-button {
+        padding-top: 0;
+    }
+}
+
+
+.outcome {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 767px) {
+    .outcome {
+        justify-content: flex-start;
+    }
+}
+
+.reserve {
+    width: 200px;
+    height: 80px;
+    background-color: #EBEADE;
+    text-align: center;
+    border-radius: 50px 50px 50px 50px;
+}
+
+@media screen and (min-width: 767px) {
+    .reserve {
+        width: 90px;
+        height: 80px;
+        border-radius: 0;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .reserve {
+        width: 120px;
+        border-radius: 0;
+    }
+}
+
+.reserve p {
+    margin-top: 25px;
+    font-size: 1.4rem;
+}
+
+@media screen and (min-width: 1050px) {
+    .reserve p {
+        font-size: 1.8rem;
+    }
+}
+
+.tel {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: #736767;
+    text-align: center;
+    border-radius: 50px 50px 50px 50px;
+}
+
+@media screen and (min-width: 767px) {
+    .tel {
+        border-radius: 0;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .tel {
+        width: 92px;
+        border-radius: 0;
+    }
+}
+
+
+.tel-icon {
+    position: absolute;
+    top: 8%;
+    left: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    color: #f6f6f1;
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 767px) {
+    .tel-icon {
+        top: 45%;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .tel-icon {
+        top: 45%;
+        font-size: 1.8rem;
+    }
+}
+
+
+/* メイン */
+
+.main {
+    position: relative;
+    height: 980px;
+    background-size: cover;
+    background-color: rgba(255,255,255,0.24);
+    background-blend-mode: color;
+    /* 子要素(ロゴ＆テキスト)押し込み */
+    padding-top: 200px;
+    transition: all 1s linear;
+}
+
+.m-img1 {
+    background-image: url(images/main-1.jpg);
+    background-position: right 20% top;
+}
+
+.m-img2 {
+    background-image: url(images/main-2.jpg);
+    background-position: right 20% top;
+}
+
+.m-img3 {
+    background-image: url(images/main-3.jpg);
+    background-position: center;
+}
+
+.m-img4 {
+    background-image: url(images/main-4.jpg);
+    background-position: right 20% top;
+}
+
+
+@media screen and (min-width: 767px) {
+    .main {
+        height: 980px;
+    }
+}
+
+.main-content-box {
+    position: absolute;
+    top: 13%;
+    margin-left: 5%;
+}
+
+@media screen and (min-width: 767px) {
+    .main-content-box {
+        margin-left: 10%;
+    }
+}
+
+.main-logo {
+    width: 50%;
+    padding-top: 50%;
+    margin-top: 40%;
+    background-image: url(images/hair_logo.png);
+    background-size: cover;
+}
+
+@media screen and (min-width: 575px) {
+    .main-logo {
+        width: 70%;
+        padding-top: 70%;
+        margin-top: 20%;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .main-logo {
+        width: 85%;
+        padding-top: 85%;
+    }
+}
+
+.tagline {
+    display: inline-block;
+    padding-left: 20px;
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 575px) {
+    .tagline {
+        padding-left: 40px;
+        font-size: 2.0rem;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .tagline {
+        padding-left: 60px;
+        font-size: 2.2rem;
+    }
+}
+
+
+/* メイン画像 切り替え */
+
+.conversion {
+    position: absolute;
+    top: 95%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75px;
+}
+
+@media screen and (min-width: 767px) {
+    .conversion {
+        width: 100px;
+    }
+}
+
+.mini-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.black-circle {
+    background-color: #736767;
+}
+
+.white-circle {
+    background-color: #cacaca;
+    opacity: 0.6;
+}
+
+@media screen and (min-width: 767px) {
+    .mini-circle {
+        width: 15px;
+        height: 15px;
+        margin: 10px 0;
+    }
+}
+
+
+/* コンセプト */
+
+.concept {
+    width: 100%;
+    height: 980px;
+}
+
+.concept-content-box {
+    position: relative;
+    margin-top: 80px;
+}
+
+@media screen and (min-width: 767px) {
+    .concept-content-box {
+        margin-left: 15%;
+    }
+}
+
+.concept-content-subbox {
+    text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+    .concept-content-subbox {
+        padding-top: 40px;
+        text-align: left;
+    }
+}
+
+.concept-content-subbox h2 {
+    position: relative;
+    z-index: 1;
+}
+
+.subcopy {
+    margin-top: 60px;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 2.0rem;
+    line-height: 2.6;
+}
+
+@media screen and (min-width: 767px) {
+    .subcopy {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 2.4rem;
+    }
+}
+
+.copy-line {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(transparent 75%, #EBEADE 50%);
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 767px) {
+    .copy-line {
+        font-size: 2.0rem;
+    }
+}
+
+.concept-text {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 3.0;
+    font-size: 1.4rem;
+}
+
+@media screen and (min-width: 767px) {
+    .concept-text {
+        margin-left: 0;
+        margin-right: 0;
+        line-height: 3.6;
+        font-size: 1.6rem;
+    }
+}
+
+.concept-img {
+    position: absolute;
+    top: 400px;
+    right: 0;
+    width: 455px;
+    height: 430px;
+    border-radius: 10px 10px 10px 10px;
+    background-image: url(images/hair-dryer.jpg);
+    background-size: 455px 430px;
+    filter: opacity(60%);
+    box-shadow: -40px 20px 20px 0 rgba(0,0,0,0.15);
+}
+
+@media screen and (min-width: 767px) {
+    .concept-img {
+        position: absolute;
+        top: 0;
+        width: 840px;
+        height: 800px;
+        background-size: 840px 800px;
+    }
+}
+
+.illust-leaf {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 65px;
+    background-image: url(images/leaf.png);
+    background-size: contain;
+    transform: rotate(0.15turn);
+    opacity: 0.4;
+}
+
+@media screen and (min-width: 767px) {
+    .illust-leaf {
+        right: 0;
+        width: 280px;
+        height: 80px;
+    }
+}
+
+.illust-leaf-sec {
+    position: absolute;
+    top: 790px;
+    left: -10px;
+    width: 200px;
+    height: 65px;
+    background-image: url(images/leaf.png);
+    background-size: contain;
+    transform: rotate(0.65turn);
+    opacity: 0.4;
+}
+
+@media screen and (min-width: 767px) {
+    .illust-leaf-sec {
+        top: 800px;
+        left: -180px;
+        width: 280px;
+        height: 80px;
+    }
+}
+
+
+/* インスタグラム */
+
+.instagram {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #EBEADE;
+}
+
+.instagram-box {
+    position: relative;
+}
+
+.instagram-flex {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+@media screen and (min-width: 767px) {
+    .instagram-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.insta-caption {
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen  and (min-width: 767px){
+    .insta-caption {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.illust-photo {
+    position: absolute;
+    top: 155px;
+    right: 17%;
+    width: 30%;
+    padding-top: 25%;
+    background-image: url(images/photo.png);
+    background-size: contain;
+    opacity: 0.6;
+}
+
+.illust-photo-sec {
+    position: absolute;
+    top: 55%;
+    right: 17%;
+    width: 30%;
+    padding-top: 80%;
+    background-image: url(images/photo.png);
+    background-size: contain;
+    opacity: 0.6;
+}
+
+@media screen and (min-width: 767px) {
+    .illust-photo {
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .illust-photo-sec {
+        top: 80%;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+    }
+}
+
+.img-flex {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+@media screen and (min-width: 767px) {
+    .img-flex {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-left: 13%;
+        padding-right: 13%;
+    }
+}
+
+.insta-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-top: 12px;
+    margin-left: 6%;
+    font-size: 1.4rem;
+}
+
+@media screen and (min-width: 767px) {
+    .insta-icon {
+        margin-left: 4%;
+        font-size: 1.8rem;
+    }
+}
+
+.left-icon {
+    margin-left: 40%;
+}
+
+@media screen and (min-width: 767px) {
+    .left-icon {
+        margin-left: 4%;
+    }
+    
+}
+
+.img-box {
+    width: 50%;
+}
+
+.last-img-box {
+    display: flex;
+    width: 100%;
+}
+
+@media screen and (min-width: 767px) {
+    .img-box {
+        width: 100%;
+    }
+
+    .last-img-box {
+        display: block;
+    }
+}
+
+.insta-img {
+    width: 100%;
+}
+
+.common-image {
+    width: 80%;
+    padding-top: 80%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    border-radius: 15px 15px 15px 15px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.15);
+}
+
+.img-1 {
+    background-image: url(images/hair-img1.jpg);
+}
+
+.img-2 {
+    background-image: url(images/hair-img2.jpg);
+}
+
+.img-3 {
+    background-image: url(images/hair-img3.jpg);
+}
+
+.img-4 {
+    background-image: url(images/hair-img4.jpg);
+}
+
+.img-5 {
+    background-image: url(images/hair-img5.jpg);
+}
+
+
+/* ニュース */
+
+.news {
+    position: relative;
+    width: 100%;
+    padding-top: 80px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 80px;
+}
+
+.news-caption {
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen  and (min-width: 767px){
+    .news-caption {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 767px){
+    .news-flex {
+        display: flex;
+    }
+}
+
+.topic {
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+@media screen and (min-width: 767px){
+    .topic {
+        margin-top: 20px;
+        margin-left: 100px;
+        text-align: left;
+    }    
+}
+
+
+.topic p {
+    font-size: 1.4rem;
+    text-align: left;
+    line-height: 3.6;
+    border-bottom: 1px solid;
+}
+
+@media screen and (min-width: 767px) {
+    .topic p {
+        font-size: 1.6rem;
+    }
+}
+
+.news-button {
+    margin-top: 40px;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 767px) {
+    .news-button {
+        margin-right: 0;
+    }
+}
+
+.flex-illust {
+    display: flex;
+}
+
+.single-flower {
+    position: absolute;
+    top: 60px;
+    right: 140px;
+    width: 30px;
+    height: 40px;
+    background-image: url(images/singe-flower.png);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+}
+
+.illust-bird {
+    position: absolute;
+    top: 40px;
+    right: 65px;
+    width: 90px;
+    height: 80px;
+    background-image: url(images/bird.png);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+}
+
+.illust-bird-sec {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    width: 80px;
+    height: 70px;
+    background-image: url(images/bird.png);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+}
+
+@media screen and (min-width: 767px) {
+
+    .single-flower {
+        top: 275px;
+        left: 115px;
+        width: 50px;
+        height: 70px;
+    }
+
+    .illust-bird {
+        top: 255px;
+        left: 135px;
+        width: 130px;
+        height: 120px;
+    }
+    
+    .illust-bird-sec {
+        top: 300px;
+        left: 240px;
+        width: 110px;
+        height: 100px;
+    }
+}
+
+
+/* メニュー */
+
+.menu {
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #EBEADE;
+}
+
+.menu-caption {
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+    .menu-caption {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.menu-flex {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+@media screen and (min-width: 767px) {
+    .menu-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.menu-content-flex {
+    display: block;
+    margin-top: 40px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+@media screen and (min-width: 767px) {
+    .menu-content-flex {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 11%;
+    }
+}
+
+.caption-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caption-flex p {
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.flex-kids {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex-kids p {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.kids {
+    white-space: nowrap;
+}
+
+.kids-price {
+    width: 100%;
+}
+
+@media screen and (min-width: 545px) {
+    .kids-price {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .kids-price {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1261px) {
+    .kids-price {
+        width: 50%;
+    }
+}
+
+.cut {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 370px;
+    padding: 40px 12%;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #f6f6f1;
+}
+
+@media screen and (min-width: 767px) {
+    .cut {
+        width: 45%;
+        padding: 40px 7%;
+    }
+}
+
+.cut-icon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 25px;
+    height: 30px;
+}
+
+.cut h3 {
+    text-align: center;
+}
+
+.dot {
+    width: 100%;
+    height: 5px;
+    margin: 0 10px;
+    border-bottom: 1px dotted #736767;
+}
+
+.cut-box {
+    margin-top: 40px;
+}
+
+.cut-box p {
+    line-height: 2.6;
+    white-space: nowrap;
+}
+
+.notes {
+    margin-top: 60px;
+    font-size: 1.2rem;
+}
+
+.another {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 370px;
+    margin-top: 180px;
+    padding: 40px 12%;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #f6f6f1;
+}
+
+@media screen and (min-width: 767px ) {
+    .another {
+        width: 45%;
+        margin-top: 40px;
+        padding: 40px 7%;
+    }
+}
+
+.another-icon {
+    width: 25px;
+    height: 30px;
+}
+
+.another h3 {
+    text-align: center;
+}
+
+.another-box {
+    margin-top: 40px;
+}
+
+.another-box p {
+    white-space: nowrap;
+    line-height: 2.6;
+}
+
+.cut-img {
+    position: absolute;
+    top: 165px;
+    left: 0;
+    width: 70%;
+    height: 370px;
+    margin-top: 40px;
+    margin-left: 5%;
+    background-image: url(images/cut-img.jpg);
+    background-size: cover;
+    border-radius: 10px 10px 10px 10px;
+}
+
+@media screen and (min-width: 767px) {
+    .cut-img {
+        width: 40%;
+    }
+}
+
+.another-img {
+    position: absolute;
+    top: 615px;
+    right: 0;
+    width: 70%;
+    height: 370px;
+    margin-right: 5%;
+    background-image: url(images/another-img.jpg);
+    background-size: cover;
+    border-radius: 10px 10px 10px 10px;
+}
+
+@media screen and (min-width: 767px) {
+    .another-img {
+        top: 165px;
+        width: 40%;
+    }
+}
+
+.menu-box {
+    position: relative;
+}
+
+.illust-flower {
+    z-index: 1;
+    position: absolute;
+    top: 1020px;
+    left: 50px;
+    width: 100px;
+    height: 150px;
+    background-image: url(images/flower.png);
+    background-size: contain;
+    opacity: 0.6;
+}
+
+@media screen and (min-width: 767px) {
+    .illust-flower {
+        top: 520px;
+        width: 150px;
+        height: 200px;
+    }
+}
+
+.illust-flex {
+    display: flex;
+    position: absolute;
+    right: 50px;
+}
+
+.illust-saboten {
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    width: 70px;
+    height: 100px;
+    background-image: url(images/saboten.png);
+    background-size: contain;
+    opacity: 0.6;
+}
+
+@media screen and (min-width: 767px) {
+    .illust-saboten {
+        top: 65px;
+        right: 80px;
+        width: 100px;
+        height: 150px;
+    }
+}
+
+.illust-vase {
+    z-index: 1;
+    width: 70px;
+    height: 100px;
+    background-image: url(images/vase.png);
+    background-size: contain;
+    opacity: 0.6;
+}
+
+@media screen and (min-width: 767px) {
+    .illust-vase {
+        width: 100px;
+        height: 150px;
+    }
+}
+
+.menu-button {
+    margin-top: 60px;
+}
+
+
+/* スタイリスト */
+
+.stylist {
+    width: 100%;
+    padding-top: 80px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 80px;
+}
+
+@media screen and (min-width: 767px) {
+    .stylist-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.stylist-caption {
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+    .stylist-caption {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.sty-content-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+@media screen and (min-width: 767px) {
+    .sty-content-box {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.sty-content-box p {
+    text-align: right;
+}
+
+.sty {
+    width: 50%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 572px) {
+    .sty {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .sty{
+        width: 90%;
+        max-width: 210px;
+        margin: 0;
+    }
+}
+
+.sty-img {
+    width: 90%;
+}
+
+@media screen and (min-width: 572px) {
+    .sty-img {
+        width: 100%;
+    }
+}
+
+.sty-common {
+    width: 100%;
+    padding-top: 120%;
+    margin-bottom: 20px;
+    background-size: cover;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.15);
+}
+
+@media screen and (min-width: 545px) {
+    .sty-common {
+        width: 100%;
+        padding-top: 120%;
+    }
+}
+
+
+.sty-img1 {
+    background-image: url(images/aoki.jpg);
+}
+
+.sty-img2 {
+    background-image: url(images/ikeda.jpg);
+}
+
+.sty-img3 {
+    background-image: url(images/midorima.jpg);
+}
+
+.sty-img4 {
+    background-image: url(images/iwasaki.jpg);
+}
+
+.post {
+    font-size: 1.0rem;
+}
+
+@media screen and (min-width: 545px) {
+    .post {
+        font-size: 1.2rem;
+    }
+}
+
+.name {
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+}
+
+@media screen and (min-width: 545px) {
+    .name {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* ご予約 */
+
+.contract {
+    width: 100%;
+    padding-top: 80px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 80px;
+    background-color: #EBEADE;
+}
+
+.contract-caption {
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+    .contract-caption {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.contract-box {
+    width: 100%;
+}
+
+@media screen and (min-width: 767px) {
+    .contract-box {
+        width: 50%;
+    }
+}
+
+.contract-button {
+    margin-top: 40px;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 767px) {
+
+    .contract-button {
+        margin-right: 0;
+    }
+    
+    .contract-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-collapse: collapse;
+    border: solid 1px rgb(192, 192, 192);
+}
+
+table td {
+    border: dashed 1px rgb(192, 192, 192);
+}
+
+td {
+    padding: 10px 20px;
+    font-size: 1.4rem;
+}
+
+@media screen and (min-width: 480px) {
+    td {
+        padding: 10px 20px;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    td {
+        padding: 20px 30px;
+        font-size: 2.2rem;
+    }
+}
+
+.holiday {
+    color: rgb(204, 96, 96);;
+}
+
+/* カレンダー  */
+
+.wrapper{
+    width: 100%;
+    padding-top: 80px;
+    margin: 0 auto;
+    color: #666;
+}
+
+@media screen and (min-width: 767px) {
+    .wrapper {
+        width: 50%;
+        padding-top: 0;
+        padding-left: 5%;
+    }
+}
+
+#header {
+    text-align: center;
+    font-size: 2.4rem;
+    width: 100%;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+@media screen and (min-width: 767px) {
+    #header {
+        width: 50%;
+    }
+}
+
+#calendar {
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+#calendar table {
+    outline: 2px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #f6f6f1;
+}
+
+tbody {
+    width: 50%;
+}
+
+.dayOfWeek {
+    width: 50%;
+}
+
+#calendar th {
+    color: #736767;
+}
+#calendar th, td {
+    outline: 1px solid #ddd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: center;
+}
+/*月曜日*/
+#calendar td:first-child {
+    color: rgb(204, 96, 96);
+}
+/* 祝日 */
+/* #calendar td.holiday{
+    color: rgb(204, 96, 96);
+} */
+
+/*前後月の日付*/
+td.disabled {
+    color: #ccc;
+}
+
+/* td.disabled:first-child {
+    color: rgb(236, 181, 181);
+} */
+
+/*本日*/
+td.today {
+    background-color: #D65E72;
+    color: #fff;
+}
+
+/*ボタン*/
+#next-prev-button {
+    position: relative;
+}
+#next-prev-button button{
+    cursor: pointer;
+    background: #736767;
+    color: #fff;
+    border: 1px solid #736767;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 4px 18px;
+    margin: 1rem 0;
+}
+#next-prev-button button:hover{
+    background-color: #948484;
+    border-color: #948484;
+}
+#prev {
+    position: absolute;
+    left: 0;
+    /* float: left; */
+}
+#next {
+    position: absolute;
+    right: 0;
+    /* float: right; */
+}
+
+
+/* アクセス */
+
+.access {
+    width: 100%;
+    padding-top: 80px;
+}
+
+.access-caption {
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+    .access-caption {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.access-box {
+    position: relative;
+    margin-top: 40px;
+}
+
+.circle {
+    height: 10px;
+    margin: 2px 0;
+    margin-bottom: 5px;
+    transform: rotate(0.1turn);
+}
+
+.img-price {
+    width: 100%;
+}
+
+.img-price iframe {
+    width: 100%;
+}
+
+.location {
+    width: 90%;
+    height: 420px;
+    margin: 40px auto;
+    padding: 0 20px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #fff;
+}
+
+@media screen and (min-width: 432px) {
+    .location {
+        height: 260px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .location {
+        width: 300px;
+        height: 420px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 40px;
+        margin-right: 5%;
+    }
+}
+
+.location-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7px;
+}
+
+.location-flex {
+    width: 100%;
+    padding-top: 15px;
+}
+
+@media screen and (min-width:432px) {
+    .location-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width:767px) {
+    .location-flex {
+        display: block;
+    }
+}
+
+.sublogo-location {
+    width: 255px;
+}
+
+@media screen and (min-width:432px) {
+    .sublogo-location {
+        width: 47%;
+    }
+}
+
+@media screen and (min-width:767px) {
+    .sublogo-location {
+        width: 255px;
+    }
+}
+
+.location-text-box {
+    width: 100%;
+    text-align: left;
+}
+
+.location-text-box p {
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width:767px) {
+    .location-text-box p {
+        font-size: 1.8rem;
+    }
+}
+
+.location-img {
+    width: 100%;
+    height: 190px;
+    border-radius: 10px 10px 10px 10px;
+    background-image: url(images/location.jpg);
+    background-size: cover;
+    background-position: center bottom;
+}
+
+@media screen and (min-width:432px) {
+    .location-img {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width:767px) {
+    .location-img {
+        width: 100%;
+    }
+}
+
+.sub-logo {
+    width: 100%;
+    height: 80px;
+    background-image: url(images/hair_logo_side.png);
+    background-size: contain;
+    background-position: 0 50%;
+}
+
+.tel-flex {
+    display: flex;
+    padding-top: 8px;
+}
+
+.tel-icon-last {
+    width: 37px;
+    height: 50px;
+}
+
+.tel-link {
+    padding-top: 5px;
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+
+@media screen and (min-width:767px) {
+    .tel-link {
+        font-size: 2.0rem;
+    }
+}
+
+
+/* フッター */
+
+footer {
+    width: 100%;
+    height: 5vh;
+}
+
+footer p {
+    padding: 15px 0;
+    text-align: center;
+}
+
+
+
+
